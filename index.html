@@ -1,0 +1,39 @@
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Kinto.js demo</title>
+    <link rel="stylesheet"
+          href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+  </head>
+  <body>
+    <div class="container">
+      <h1>Lockbox</h1>
+      <form class="form-inline" id="form-add">
+        <div class="form-group">
+          <input class="form-control" type="text" name="title" placeholder="google.ca:username:password">
+          <input class="btn btn-primary" type="submit" value="Add">
+        </div>
+      </form>
+      <button id="button-delete-all">Delete all and sync</button>
+      <br><br>
+      <button id="button-clear-local-data">Clear local data</button>
+      <br><br>
+      <button id="button-list-all">List local data</button>
+      <br><br>
+      <button id="button-sync">sync</button>
+      <hr>
+      <ul id="tasks" class="list-group"></ul>
+      <textarea style="width:100%; min-height:100px" id='items-table'></textarea>
+      <textarea style="width:100%; min-height:100px;" id='keys-table' ></textarea>
+      <textarea style="width:100%; min-height:100px;" id='origins-table' ></textarea>
+    </div>
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/fetch/2.0.3/fetch.min.js'></script> <!--for safari-->
+    <script src='ext/unibabel.js'></script>
+    <script src="ext/kinto.min.js"></script>
+    <script src='deriveKey.js'></script>
+    <script src="appGlobals.js"></script>
+    <script src="utils.js"></script>
+    <script src="lockboxItem.js"></script>
+    <script src="demo.js"></script>
+  </body>
+</html>
