@@ -139,6 +139,6 @@ window.Unibabel = {
 , utf8ArrToStr: bufferToUtf8
 , arrToBase64: bufferToBase64
 , base64ToArr: base64ToBuffer
+, hexToBuffer: hexToBuffer
+, bufferToHex: bufferToHex
 };
-
-
