@@ -1,4 +1,5 @@
 // @ts-check
+// Preview with: http://htmlpreview.github.io/?https://github.com/garvankeeley/kinto-lockbox/blob/master/index.html
 
 function createOriginHash(itemUuid, origin) {
   let hashedOrigin = '';
@@ -105,14 +106,14 @@ function main() {
     event.preventDefault();
     const data = event.target['title'].value;
     if (!data) {
-      addItem(sampleLoginsData[0]);
+      addItem(sampleLoginsData[0]).then(res => listAll());
       return;
     }
     const parts = data.split(':')
-    addItem({ site: parts[0], username: parts[1], password: parts[2] });
+    addItem({ site: parts[0], username: parts[1], password: parts[2] }).then(res => listAll());
   });
 
-  addItem(sampleLoginsData[0]);
+  addItem(sampleLoginsData[0]).then(res => listAll());
 
   deriveKeyPBKDF(masterPassword, masterEncryptionSalt).then(key => {
     masterEncryptionKey = key;

@@ -46,7 +46,7 @@ function addItem(itemData) {
     return kinto.collection(DB.items.name).update(encryptedItem);
   }
 
-  createEmptyItem()
+  return createEmptyItem()
     .then(resultId => createPerItemKey(resultId, masterEncryptionKey))
     .then(perItemKey => encryptItem(itemData, perItemKey))
     .then(encryptedItem => updateItemEncryptedData(encryptedItem))
